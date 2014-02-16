@@ -1,0 +1,9 @@
+/*@define TestWithRoot*/
+
+:root {
+  var-invalid-color: green;
+}
+
+.TestWithRoot {
+  color: green;
+}

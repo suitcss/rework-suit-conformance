@@ -1,0 +1,17 @@
+/*@define Test*/
+
+.Test {
+  color: green;
+}
+
+.Test-child {
+  color: green;
+}
+
+.Test.is-active {
+  color: green;
+}
+
+.Test .Another {
+  color: green;
+}

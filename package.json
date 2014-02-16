@@ -1,0 +1,31 @@
+{
+  "name": "rework-suit-conformance",
+  "version": "0.1.0",
+  "description": "SUIT CSS component conformance plugin for Rework",
+  "files": [
+    "index.js",
+    "lib/*"
+  ],
+  "keywords": [
+    "css",
+    "rework",
+    "suit",
+    "conformance",
+    "test",
+    "lint"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.14.0",
+    "rework": "~0.20.2",
+    "chai": "~1.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/suitcss/rework-suit-conformance.git"
+  },
+  "scripts": {
+    "test": "mocha --no-colors",
+    "watch": "mocha --reporter spec --watch"
+  }
+}

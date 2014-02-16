@@ -1,0 +1,9 @@
+/*@define TestWithGlobals*/
+
+div {
+  color: red;
+}
+
+.TestWithGlobals {
+  color: red;
+}

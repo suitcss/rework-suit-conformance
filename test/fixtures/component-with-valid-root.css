@@ -1,0 +1,10 @@
+/*@define TestWithRoot*/
+
+:root {
+  var-TestWithRoot-background: green;
+  var-color-TestWithRoot: green;
+}
+
+.TestWithRoot {
+  color: green;
+}
