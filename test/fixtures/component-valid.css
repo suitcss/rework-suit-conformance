@@ -4,7 +4,8 @@
   color: green;
 }
 
-.Test-child {
+.Test-child,
+.Test-child2 {
   color: green;
 }
 
