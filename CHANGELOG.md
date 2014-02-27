@@ -1,5 +1,6 @@
 === HEAD
 
+=== 0.1.3 (February 27, 2014)
 === 0.1.2 (February 27, 2014)
 
 * Support checking of rules in media queries.
