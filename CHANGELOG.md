@@ -1,5 +1,7 @@
 === HEAD
 
+=== 0.1.2 (February 27, 2014)
+
 * Support checking of rules in media queries.
 
 === 0.1.1 (February 24, 2014)
