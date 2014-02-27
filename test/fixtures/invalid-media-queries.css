@@ -1,0 +1,11 @@
+/*@define TestWithMediaQuery*/
+
+.TestWithMediaQuery {
+  color: green;
+}
+
+@media all {
+  .Error {
+    color: green;
+  }
+}
