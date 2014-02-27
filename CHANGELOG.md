@@ -1,5 +1,7 @@
 === HEAD
 
+* Support checking of rules in media queries.
+
 === 0.1.1 (February 24, 2014)
 
 * Fix bug in function that tests for valid rules.

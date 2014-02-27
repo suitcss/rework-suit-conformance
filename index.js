@@ -21,7 +21,7 @@ module.exports = conformance;
 var MARKER = '@define';
 
 /**
- * @param {Object} ast
+ * @param {Object} ast Rework AST
  * @param {Function} reworkInstance
  */
 
@@ -32,12 +32,29 @@ function conformance(ast, reworkInstance) {
   if (!isComponent) return;
 
   var componentName = initialComment.split(MARKER)[1].trim();
-  var rules = ast.rules.filter(function (rule) {
-      if (rule.type !== 'rule') return;
-      return rule;
-  });
+  var rules = getSimpleRules(ast.rules);
 
   validateRules(rules);
   validateSelectors(rules, componentName);
   validateCustomProperties(rules, componentName);
+}
+
+/**
+ * Return an array of simple CSS rulesets, excluding @media rules, etc.
+ *
+ * @param {Object} rules Rules from Rework AST
+ * @return {Array}
+ */
+
+function getSimpleRules(rules) {
+  var simpleRules = [];
+  rules.forEach(function (rule) {
+    if (rule.rules) {
+      simpleRules = simpleRules.concat(getSimpleRules(rule.rules));
+    }
+    if (rule.type == 'rule') {
+      simpleRules.push(rule);
+    }
+  });
+  return simpleRules;
 }
