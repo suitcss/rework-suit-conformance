@@ -30,8 +30,8 @@ line of the file.
 /** @define MyComponent */
 
 :root {
-  var-MyComponent-property: value;
-  var-property-MyComponent: value;
+  --MyComponent-property: value;
+  --property-MyComponent: value;
 }
 
 .MyComponent {}
