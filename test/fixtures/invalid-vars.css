@@ -1,7 +1,7 @@
 /*@define TestWithRoot*/
 
 :root {
-  var-invalid-color: green;
+  --invalid-color: green;
 }
 
 .TestWithRoot {
