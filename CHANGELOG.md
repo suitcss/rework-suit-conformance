@@ -1,5 +1,9 @@
 === HEAD
 
+=== 0.2.0 (April 17, 2014)
+
+* Update expected custom property syntax (from `var-*` to `--*`)
+
 === 0.1.3 (February 27, 2014)
 === 0.1.2 (February 27, 2014)
 
