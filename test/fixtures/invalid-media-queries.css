@@ -1,4 +1,4 @@
-/*@define TestWithMediaQuery*/
+/** @define TestWithMediaQuery */
 
 .TestWithMediaQuery {
   color: green;

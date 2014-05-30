@@ -1,4 +1,4 @@
-/*@define TestWithRoot*/
+/** @define TestWithRoot */
 
 :root {
   --invalid-color: green;

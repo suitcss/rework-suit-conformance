@@ -1,4 +1,4 @@
-/*@define TestInvalid*/
+/** @define TestInvalid */
 
 .potentialFakeMatchTestInvalid {
   color: red;
