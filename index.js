@@ -18,7 +18,7 @@ module.exports = conformance;
  * Constants
  */
 
-var MARKER = '@define';
+var RE_DIRECTIVE = /\* @define ([A-Z][a-zA-Z]+)(?:; (use strict))?\s*/;
 
 /**
  * @param {Object} ast Rework AST
@@ -27,15 +27,23 @@ var MARKER = '@define';
 
 function conformance(ast, reworkInstance) {
   var initialComment = ast.rules[0].comment;
-  var isComponent = initialComment ? initialComment.indexOf(MARKER) !== -1 : false;
+  var isDefinition = (initialComment && initialComment.match(/@define/));
+  var isComponent = (initialComment && initialComment.match(RE_DIRECTIVE));
+  if (!isDefinition) { return; }
+  if (isDefinition && !isComponent) {
+    console.warn(
+      'WARNING: invalid component name in definition /*' + initialComment + '*/.',
+      'Component names must be pascal-case, e.g., ComponentName.'
+    );
+    return;
+  }
 
-  if (!isComponent) return;
-
-  var componentName = initialComment.split(MARKER)[1].trim();
+  var componentName = initialComment.match(RE_DIRECTIVE)[1].trim();
+  var isStrict = initialComment.match(RE_DIRECTIVE)[2] === 'use strict';
   var rules = getSimpleRules(ast.rules);
 
   validateRules(rules);
-  validateSelectors(rules, componentName);
+  validateSelectors(rules, componentName, isStrict);
   validateCustomProperties(rules, componentName);
 }
 

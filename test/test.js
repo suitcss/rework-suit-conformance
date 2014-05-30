@@ -49,4 +49,11 @@ describe('linting', function () {
       assertFailure('invalid-media-query');
     });
   });
+
+  describe('a css file that uses the strict `@define` notation', function () {
+    it('must contain only contain valid component classes in selectors', function () {
+      assertSuccess('valid-rules-strict');
+      assertFailure('invalid-selectors-strict');
+    });
+  });
 });

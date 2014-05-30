@@ -1,7 +1,7 @@
 # rework-suit-conformance
 
 A [Rework](https://github.com/reworkcss/rework) plugin to check the conformance
-of [SUIT](https://github.com/suitcss/suit) CSS components.
+of a component's CSS to the [SUIT CSS](https://github.com/suitcss/suit) methodology.
 
 [![Build Status](https://secure.travis-ci.org/suitcss/rework-suit-conformance.png?branch=master)](http://travis-ci.org/suitcss/rework-suit-conformance)
 
@@ -13,18 +13,26 @@ npm install rework-suit-conformance
 
 ## Conformance tests
 
-* All selectors are classes beginning with the defined `ComponentName`.
-* All custom-property names contain the defined `ComponentName`.
-* `:root` selector can only contain custom-properties.
-* `:root` cannot be combined with other selectors.
+**Default mode**:
+
+* Only allow selectors that *begin* with a class matching the defined `ComponentName`.
+* Only allow custom-property names that contain the defined `ComponentName`.
+* The `:root` selector can only contain custom-properties.
+* The `:root` cannot be combined with other selectors.
+
+**Strict mode**:
+
+* All the tests in "default mode".
+* Disallow selectors that contain classes of other components.
+* Disallow selectors that contain any classes that do not match the SUIT CSS conventions.
 
 ## Use
 
 ### Defining a component
 
 The plugin will only run against files that explicitly define themselves as a
-named component, using a `/** @define ComponentName */` comment on the first
-line of the file.
+named component, using a `/** @define ComponentName */` or `/** @define
+ComponentName; use strict */` comment on the first line of the file.
 
 ```css
 /** @define MyComponent */
@@ -37,6 +45,21 @@ line of the file.
 .MyComponent {}
 
 .MyComponent .other {}
+```
+
+Strict mode:
+
+```css
+/** @define MyComponent; use strict */
+
+:root {
+  --MyComponent-property: value;
+  --property-MyComponent: value;
+}
+
+.MyComponent {}
+
+.MyComponent-other {}
 ```
 
 ### Testing  CSS files
