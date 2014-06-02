@@ -1,5 +1,7 @@
 === HEAD
 
+=== 0.3.0 (June 2, 2014)
+
 * Add 'strict mode' to prevent complection.
 * Add more accurate naming convention checks.
 
