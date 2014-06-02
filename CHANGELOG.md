@@ -1,5 +1,8 @@
 === HEAD
 
+* Add 'strict mode' to prevent complection.
+* Add more accurate naming convention checks.
+
 === 0.2.0 (April 17, 2014)
 
 * Update expected custom property syntax (from `var-*` to `--*`)
