@@ -25,35 +25,35 @@ function assertFailure(fixture) {
 describe('linting', function () {
   describe('a CSS file that lacks the `@define` notation', function () {
     it('must be ignored', function () {
-      assertSuccess('ignore');
+      assertSuccess('all-ignore');
     });
   });
 
   describe('a css file that uses the `@define` notation', function () {
     it('must contain selectors that begin with a class matching the component name', function () {
       assertSuccess('valid-rules');
-      assertFailure('invalid-selectors');
-      assertFailure('invalid-selectors-2');
-      assertFailure('invalid-selectors-3');
-      assertFailure('invalid-selectors-4');
+      assertFailure('all-false-match');
+      assertFailure('all-invalid-selector-tag');
+      assertFailure('all-invalid-selector-component');
     });
 
     it('must only declare custom properties, containing the component name, in a `:root` rule', function () {
-      assertSuccess('valid-vars');
-      assertFailure('invalid-vars');
-      assertFailure('invalid-root');
+      assertSuccess('all-valid-root-vars');
+      assertFailure('all-invalid-root-vars');
+      assertFailure('all-invalid-root-property');
+      assertFailure('all-invalid-root-selector');
     });
 
     it('must apply to selectors in media queries', function () {
-      assertSuccess('valid-media-query');
-      assertFailure('invalid-media-query');
+      assertSuccess('all-valid-selector-in-media-query');
+      assertFailure('all-invalid-selector-in-media-query');
     });
   });
 
   describe('a css file that uses the strict `@define` notation', function () {
     it('must contain only contain valid component classes in selectors', function () {
-      assertSuccess('valid-rules-strict');
-      assertFailure('invalid-selectors-strict');
+      assertSuccess('strict-valid-rules');
+      assertFailure('strict-invalid-selector');
     });
   });
 });

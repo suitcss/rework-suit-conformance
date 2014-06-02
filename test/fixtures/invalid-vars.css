@@ -1,9 +1,0 @@
-/** @define TestWithRoot */
-
-:root {
-  --invalid-color: green;
-}
-
-.TestWithRoot {
-  color: green;
-}

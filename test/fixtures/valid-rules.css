@@ -1,18 +1,18 @@
-/** @define Test */
+/** @define ValidRules */
 
-.Test {
+.ValidRules {
   color: green;
 }
 
-.Test-child,
-.Test-child2 {
+.ValidRules-child,
+.ValidRules-child2 {
   color: green;
 }
 
-.Test.is-active {
+.ValidRules.is-active {
   color: green;
 }
 
-.Test .Another {
+.ValidRules .Another {
   color: green;
 }
