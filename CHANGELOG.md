@@ -1,5 +1,8 @@
 === HEAD
 
+* Require a component's custom property names to _begin_ with the component's
+  name (e.g., `--MyComponent`).
+
 === 0.3.0 (June 2, 2014)
 
 * Add 'strict mode' to prevent complection.

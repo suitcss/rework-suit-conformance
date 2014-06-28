@@ -1,9 +1,9 @@
 # rework-suit-conformance
 
+[![Build Status](https://secure.travis-ci.org/suitcss/rework-suit-conformance.png?branch=master)](http://travis-ci.org/suitcss/rework-suit-conformance)
+
 A [Rework](https://github.com/reworkcss/rework) plugin to check the conformance
 of a component's CSS to the [SUIT CSS](https://github.com/suitcss/suit) methodology.
-
-[![Build Status](https://secure.travis-ci.org/suitcss/rework-suit-conformance.png?branch=master)](http://travis-ci.org/suitcss/rework-suit-conformance)
 
 ## Installation
 
@@ -16,15 +16,15 @@ npm install rework-suit-conformance
 **Default mode**:
 
 * Only allow selectors that *begin* with a class matching the defined `ComponentName`.
-* Only allow custom-property names that contain the defined `ComponentName`.
+* Only allow custom-property names that *begin* with the defined `ComponentName`.
 * The `:root` selector can only contain custom-properties.
 * The `:root` cannot be combined with other selectors.
 
 **Strict mode**:
 
 * All the tests in "default mode".
-* Disallow selectors that contain classes of other components.
 * Disallow selectors that contain any classes that do not match the SUIT CSS conventions.
+* Disallow selectors that contain classes of other components.
 
 ## Use
 
@@ -39,7 +39,6 @@ ComponentName; use strict */` comment on the first line of the file.
 
 :root {
   --MyComponent-property: value;
-  --property-MyComponent: value;
 }
 
 .MyComponent {}
@@ -54,7 +53,6 @@ Strict mode:
 
 :root {
   --MyComponent-property: value;
-  --property-MyComponent: value;
 }
 
 .MyComponent {}
@@ -62,11 +60,10 @@ Strict mode:
 .MyComponent-other {}
 ```
 
-### Testing  CSS files
+### Testing CSS files
 
 Pass your individual CSS files through the plugin. It will throw errors for
-conformance failures, which you can use to interrupt your development build
-task.
+conformance failures, which you can log when caught by your build tools.
 
 ```js
 var rework = require('rework');
