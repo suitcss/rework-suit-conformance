@@ -1,7 +1,7 @@
+var assert = require('assert');
+var conformance = require('..');
 var fs = require('fs');
 var rework = require('rework');
-var expect = require('chai').expect;
-var conformance = require('..');
 
 function processFixture(name) {
   var css = fs.readFileSync('test/fixtures/' + name + '.css', 'utf8').trim();
@@ -12,14 +12,14 @@ function assertSuccess(fixture) {
   var result = function () {
     processFixture(fixture);
   };
-  expect(result).not.to.Throw();
+  assert.doesNotThrow(result);
 }
 
 function assertFailure(fixture) {
   var result = function () {
     processFixture(fixture);
   };
-  expect(result).to.Throw();
+  assert.throws(result);
 }
 
 describe('linting', function () {

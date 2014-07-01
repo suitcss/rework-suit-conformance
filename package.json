@@ -4,7 +4,7 @@
   "description": "SUIT CSS component conformance plugin for Rework",
   "files": [
     "index.js",
-    "lib/*"
+    "lib"
   ],
   "keywords": [
     "css",
@@ -17,8 +17,7 @@
   "license": "MIT",
   "devDependencies": {
     "mocha": "~1.14.0",
-    "rework": "~0.20.2",
-    "chai": "~1.8.1"
+    "rework": "^1.0.0"
   },
   "repository": {
     "type": "git",
