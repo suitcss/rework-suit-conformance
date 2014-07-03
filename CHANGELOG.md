@@ -1,5 +1,7 @@
 === HEAD
 
+* Fix valid custom property check.
+
 === 0.4.0 (July 1, 2014)
 
 * Require a component's custom property names to _begin_ with the component's
