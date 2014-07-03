@@ -1,5 +1,7 @@
 === HEAD
 
+=== 0.4.1 (July 3, 2014)
+
 * Fix valid custom property check.
 
 === 0.4.0 (July 1, 2014)

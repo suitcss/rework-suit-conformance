@@ -1,6 +1,6 @@
 {
   "name": "rework-suit-conformance",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "SUIT CSS component conformance plugin for Rework",
   "files": [
     "index.js",
