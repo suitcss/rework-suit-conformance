@@ -39,6 +39,7 @@ describe('linting', function () {
 
     it('must only declare custom properties, containing the component name, in a `:root` rule', function () {
       assertSuccess('all-valid-root-vars');
+      assertSuccess('all-valid-root-vars-with-comments');
       assertFailure('all-invalid-root-vars');
       assertFailure('all-invalid-root-property');
       assertFailure('all-invalid-root-selector');
