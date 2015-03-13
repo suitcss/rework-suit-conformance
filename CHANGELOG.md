@@ -1,5 +1,9 @@
 === HEAD
 
+=== 0.4.2 (March 13, 2015)
+
+* Skip comments when validating custom properties.
+
 === 0.4.1 (July 3, 2014)
 
 * Fix valid custom property check.
