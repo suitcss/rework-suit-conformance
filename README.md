@@ -1,4 +1,6 @@
-# rework-suit-conformance
+# rework-suit-conformance (DEPRECATED)
+
+**Use [postcss-bem-linter](https://github.com/postcss/postcss-bem-linter) instead**
 
 [![Build Status](https://secure.travis-ci.org/suitcss/rework-suit-conformance.png?branch=master)](http://travis-ci.org/suitcss/rework-suit-conformance)
 
